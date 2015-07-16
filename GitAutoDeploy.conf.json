@@ -1,0 +1,10 @@
+{
+	"port": 8001,
+	"repositories":
+	[{
+		"url": "https://github.com/junqueira/rootAir.git",
+		"path": "/Users/user/Dropbox/Projects/rootAir-pack/rootAir/",
+		"deploy": "echo deploying"
+	}]
+}
+

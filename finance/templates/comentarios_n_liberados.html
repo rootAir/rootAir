@@ -1,0 +1,11 @@
+{% if not comentarios %}
+<p>Nenhum comentário novo</p>
+{% else %}
+<ul>
+    {% for c in comentarios %}
+    <li class="addlink">
+        <a href="{{ c.id }}">{{ c.texto|truncatechars:30 }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

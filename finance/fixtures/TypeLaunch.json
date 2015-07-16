@@ -1,0 +1,129 @@
+[
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 1,
+        "fields": {
+            "type_name": "Imposto",
+            "cost_fixo": "False",
+            "value_fixed": "10.00"
+         }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 2,
+        "fields": {
+            "type_name": "Outros",
+            "cost_fixo": "False",
+            "value_fixed": "100.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 3,
+        "fields": {
+            "type_name": "Esporte",
+            "cost_fixo": "False",
+            "value_fixed": "100.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 4,
+        "fields": {
+            "type_name": "Moradia",
+            "cost_fixo": "True",
+            "value_fixed": "1000.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 5,
+        "fields": {
+            "type_name": "Logistica",
+            "cost_fixo": "True",
+            "value_fixed": "100.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 6,
+        "fields": {
+            "type_name": "Comunicacao",
+            "cost_fixo": "True",
+            "value_fixed": "100.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 7,
+        "fields": {
+            "type_name": "Utensilios",
+            "cost_fixo": "False",
+            "value_fixed": "100.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 8,
+        "fields": {
+            "type_name": "Estudo",
+            "cost_fixo": "False",
+            "value_fixed": "500.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 9,
+        "fields": {
+            "type_name": "Diversao",
+            "cost_fixo": "False",
+            "value_fixed": "100.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 10,
+        "fields": {
+            "type_name": "Alimento",
+            "cost_fixo": "True",
+            "value_fixed": "800.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 11,
+        "fields": {
+            "type_name": "Hig_Beleza",
+            "cost_fixo": "False",
+            "value_fixed": "50.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 12,
+        "fields": {
+            "type_name": "Aviacao",
+            "cost_fixo": "False",
+            "value_fixed": "1000.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 13,
+        "fields": {
+            "type_name": "RootAir",
+            "cost_fixo": "False",
+            "value_fixed": "1000.00"
+        }
+    },
+    {
+        "model": "finance.TypeLaunch",
+        "pk": 14,
+        "fields": {
+            "type_name": "Activity",
+            "cost_fixo": "False",
+            "value_fixed": "1000.00"
+        }
+    }
+
+]

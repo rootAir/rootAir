@@ -1,0 +1,173 @@
+[
+    {
+        "model": "activity.TypeActivity",
+        "pk": 1,
+        "fields": {
+            "type_name": "clt",
+            "type_desc": "culture",
+            "group": "fun",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 2,
+        "fields": {
+            "type_name": "fed",
+            "type_desc": "feed",
+            "group": "person",
+            "positive": "False"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 3,
+        "fields": {
+            "type_name": "log",
+            "type_desc": "logistic",
+            "group": "task",
+            "positive": "False"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 4,
+        "fields": {
+            "type_name": "pls",
+            "type_desc": "pleasure",
+            "group": "fun",
+            "positive": "False"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 5,
+        "fields": {
+            "type_name": "slp",
+            "type_desc": "sleep",
+            "group": "person",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 6,
+        "fields": {
+            "type_name": "thk",
+            "type_desc": "think",
+            "group": "fun",
+            "positive": "False"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 7,
+        "fields": {
+            "type_name": "etr",
+            "type_desc": "entret",
+            "group": "fun",
+            "positive": "False"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 8,
+        "fields": {
+            "type_name": "out",
+            "type_desc": "pls_out",
+            "group": "fun",
+            "positive": "False"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 9,
+        "fields": {
+            "type_name": "rta",
+            "type_desc": "rootair",
+            "group": "task",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 10,
+        "fields": {
+            "type_name": "pts",
+            "type_desc": "portoseg",
+            "group": "task",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 11,
+        "fields": {
+            "type_name": "doc",
+            "type_desc": "document",
+            "group": "study",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 12,
+        "fields": {
+            "type_name": "std",
+            "type_desc": "technology",
+            "group": "study",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 13,
+        "fields": {
+            "type_name": "spt",
+            "type_desc": "sport",
+            "group": "sport",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 14,
+        "fields": {
+            "type_name": "bmf",
+            "type_desc": "bovespa",
+            "group": "task",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 15,
+        "fields": {
+            "type_name": "tsk",
+            "type_desc": "task",
+            "group": "task",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 16,
+        "fields": {
+            "type_name": "ppa",
+            "type_desc": "aviacao",
+            "group": "study",
+            "positive": "True"
+        }
+    },
+    {
+        "model": "activity.TypeActivity",
+        "pk": 17,
+        "fields": {
+            "type_name": "prs",
+            "type_desc": "hig_beleza",
+            "group": "person",
+            "positive": "False"
+        }
+    }
+
+]

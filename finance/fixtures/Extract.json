@@ -1,0 +1,15 @@
+[
+    {
+        "model": "finance.Extract",
+        "pk": 1,
+        "fields": {
+            "date_launch": "2014-11-14",
+            "launch": "SETTING TO WEEK 46",
+            "date_purchase": "2014-11-14",
+            "value_debit": "0",
+            "value_credit": "295.86",
+            "value_balance": "0",
+            "cancelled": "1"
+        }
+    }
+]

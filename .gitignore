@@ -1,0 +1,24 @@
+# Created by .ignore support plugin (hsz.mobi
+
+# Compiled Python files
+*.pyc
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+#apps
+/build
+/broker
+/travel
+/location_field
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+settings_local.py
+rootAir.db
