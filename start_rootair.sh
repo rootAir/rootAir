@@ -30,7 +30,7 @@ function run_java() {
         -e "do script \"java -jar selenium-server-standalone-2.45.0.jar\" in front window" \
         -e "end tell" > /dev/null
 }
-run_java
+#run_java
 
 function new_tab() {
   osascript 2>/dev/null <<EOF
