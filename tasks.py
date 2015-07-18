@@ -2,26 +2,26 @@
 from __future__ import absolute_import
 from celery import Celery, shared_task
 from datetime import datetime
-import pika, os, logging
-logging.basicConfig()
-from utils.sync_db import *
-from django.conf import settings
+# import pika, os, logging
+# logging.basicConfig()
+# from django.conf import settings
 # try:
 #     from celery.task import task
 # except ImportError:
 #     from celery.decorators import task
-from django.conf import settings
-from utils.util import *
+# from django.conf import settings
+import os
+import time
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 app = Celery('tasks', backend="amqp", broker='')
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
-from broker.sync_mycap import SyncMycap
-from broker.sync_options import *
-from finance.sync_itau import *
 from utils.report import *
 from utils.graphic import *
-import time
+from broker.sync_mycap import SyncMycap
+from finance.sync_itau import SyncItau
+from broker.sync_options import SyncOptions
+from utils.sync_db import SyncDb
 
 
 class SyncMycap(SyncMycap):

@@ -47,13 +47,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
+    # 'crispy_forms',
     'location_field',
     'activity',
     'finance',
     'travel',
     # 'djcelery',
     'broker',
+    'utils',
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -244,6 +245,7 @@ DIR_LOCAL = '/Users/user/Documents/robo_screenshot/'
 CHROME_DRIVER = "/Users/user/Downloads/balance-pack/chromedriver"
 URL_DROPBOX = 'https://www.dropbox.com/home/%s'
 
+# MyCap
 MYCAP_USERNAME = 'YOUR_MYCAP_USERNAME'
 MYCAP_PASSWORD = 'YOUR_MYCAP_PASSWORD'
 HOUR_INIT_BROKER = '09:50'
@@ -253,23 +255,28 @@ MINUTE_FIND_TREND = 3
 QUANT_FIND_ACTIVE = 4
 VALUE_MAX_PURCHASE = 10
 
+# Itau
 ITAU_AGENCIA = 'YOUR_ITAU_AGENCIA'
 ITAU_CONTA = 'YOUR_ITAU_CONTA'
 
+# Google
 EMAIL_GOOGLE = 'YOUR_EMAIL_GOOGLE'
 SENHA_GOOGLE = 'YOUR_SENHA_GOOGLE'
 DOC_KEY_GOOGLE = 'YOUR_DOC_KEY_GOOGLE'
 
+# DataBase
 DATABASE_REMOTE = 'heroku'
 DATABASE_LOCAL = False
 DOC_KEY_DATABASE = 'YOUR_DOC_KEY_DATABASE'
 
+# Trello
 TRELLO_BOARD = 'YOUR_TRELLO_BOARD'
 TRELLO_API_KEY = 'YOUR_TRELLO_API_KEY'
 TRELLO_API_SECRET = 'YOUR_TRELLO_API_SECRET'
 TRELLO_TOKEN = 'YOUR_TRELLO_TOKEN'
 TRELLO_TOKEN_SECRET = 'YOUR_TRELLO_TOKEN_SECRET'
 
+# Dropbox
 DEFAULT_FILE_STORAGE = URL_DROPBOX %'YOUR_DEFAULT_FILE_STORAGE'
 DROPBOX_CONSUMER_KEY = 'YOUR_DROPBOX_CONSUMER_KEY'
 DROPBOX_CONSUMER_SECRET = 'YOUR_DROPBOX_CONSUMER_SECRET'

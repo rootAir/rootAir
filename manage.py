@@ -3,7 +3,7 @@ import os
 import sys
 # import pika
 
-from tasks import *
+# from tasks import *
 
 if __name__ == "__main__":
 
