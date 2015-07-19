@@ -54,7 +54,6 @@ INSTALLED_APPS = (
     'travel',
     # 'djcelery',
     'broker',
-    'utils',
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
