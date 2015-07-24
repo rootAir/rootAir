@@ -23,3 +23,4 @@ urlpatterns = format_suffix_patterns(urlpatterns)
 # urlpatterns = patterns('finance.admin',
 #     url(r'^teste/?$', WeekNumberAdmin.teste(), name='teste'),
 # );
+

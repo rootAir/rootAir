@@ -13,7 +13,6 @@ import os
 from finance.type_launch import TypeLaunch
 
 
-
 class Provider(models.Model):
     # id = models.IntegerField(primary_key=True)  # AutoField?
     description = models.CharField(max_length=100, unique=True)
