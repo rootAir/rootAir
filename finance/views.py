@@ -22,6 +22,37 @@ from django.core.urlresolvers import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 
 from .forms import WeeknumberForm
+from rest_framework import generics, viewsets
+from finance.serializers import WeekNumberSerializer, UserSerializer, GroupSerializer
+from finance.week_number import WeekNumber
+from django.contrib.auth.models import User, Group
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+
+
+class WeekNumberList(generics.ListCreateAPIView):
+	queryset = WeekNumber.objects.all()
+	serializer_class = WeekNumberSerializer
+
+
+class WeekNumberDetail(generics.RetrieveUpdateDestroyAPIView):
+	queryset = WeekNumber.objects.all()
+	serializer_class = WeekNumberSerializer
+
 
 def list(request):
 		# Handle file upload

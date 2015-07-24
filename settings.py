@@ -37,6 +37,17 @@ MEDIA_URL = '/tmp/'
 MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'tmp/')
 
 
+# REST_FRAMEWORK = {
+#                     'DEFAULT_PERMISSION_CLASSES': [
+#                         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#                     ]
+# }
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+}
+
 ###########################################################
 # Application definition
 
@@ -54,6 +65,7 @@ INSTALLED_APPS = (
     'travel',
     # 'djcelery',
     'broker',
+    'rest_framework',
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'

@@ -12,8 +12,8 @@ STATUS_CHOICES = (
 DayL = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 Month = {1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun', 7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec'}
 Extract_Mycap = ['ABERTURA', 'HORA', 'ATIVO', 'OPERACAO', 'TIPO', 'QTDE. ENVIO', 'QTDE. EXEC.', 'PCO. ENVIO', 'PCO. EXEC.','TOTAL R$','VALIDADE','STATUS']
-# listOptions = ['petr4', 'vale5', 'bvmf3', 'itub3']
-listOptions = ['petr4', 'vale5']
+listOptions = ['petr4', 'vale5', 'bvmf3', 'itub3']
+
 
 
 def get_synchronized(synchronized):
