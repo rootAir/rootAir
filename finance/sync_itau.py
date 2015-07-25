@@ -50,6 +50,7 @@ class SyncItau(threading.Thread):
         if self._finished.isSet(): return
         """
         while True:
+            # import ipdb; ipdb.set_trace()
             self._finished.wait(self._interval)
             remove_files_path('*.txt')
             if self._robot_itau.export_extract_itau(self._robot_itau.driver):

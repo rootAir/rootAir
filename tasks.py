@@ -4,12 +4,11 @@ from celery import Celery, shared_task
 from datetime import datetime
 # import pika, os, logging
 # logging.basicConfig()
-# from django.conf import settings
+from django.conf import settings
 # try:
 #     from celery.task import task
 # except ImportError:
 #     from celery.decorators import task
-# from django.conf import settings
 import os
 import time
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')

@@ -15,8 +15,11 @@ urlpatterns = patterns('finance.views',
     # url(r'^weeknumber-form/$', WeeknumberFormView.as_view(), name="weeknumber-form"),
     # url(r'^ajax_provider/?$', 'ajax_provider', name='ajax_provider'),
     # url(r'^$', RedirectView.as_view(url='/admin/finance/weeknumber/'), name='weeknumber'),
-    url(r'^api/$', views.WeekNumberList.as_view()),
-    url(r'^api/(?P<pk>[0-9]+)/$', views.WeekNumberDetail.as_view()),
+    url(r'^weeknumber/api/$', views.WeekNumberList.as_view()),
+    url(r'^weeknumber/api/(?P<pk>[0-9]+)/$', views.WeekNumberDetail.as_view()),
+
+    url(r'^contatos/api/$', views.ContatoList.as_view()),
+    url(r'^contatos/api/(?P<pk>[0-9]+)/$', views.ContatoDetail.as_view()),
 );
 
 urlpatterns = format_suffix_patterns(urlpatterns)

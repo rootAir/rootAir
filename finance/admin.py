@@ -24,6 +24,7 @@ import datetime
 import time
 # from django.http import HttpResponsePermanentRedirect
 from utils.graphic import *
+from finance.contato import *
 
 
 class FinanceAdmin(admin.ModelAdmin):
@@ -89,6 +90,10 @@ class TypeLaunchAdmin(FinanceAdmin):
     list_display = ('id', 'cost_fixo', 'type_name', 'value_fixed', 'investment', 'sync')
     list_display_links = ('id', 'type_name', 'cost_fixo')
     ordering = ('-cost_fixo',)
+
+
+class ContatoAdmin(FinanceAdmin):
+    list_display = ('id', 'nome', 'telefone', 'data')
 
 
 class PrevisionAdmin(FinanceAdmin):
@@ -159,7 +164,6 @@ class WeekNumberAdmin(FinanceAdmin):
         qs = super(WeekNumberAdmin, self).queryset(request)
         return qs.order_by('-date_init')
 
-
     def sync_mycap(self, request, json_ext=None, queryset=None):
         """
         :param request:
@@ -223,3 +227,4 @@ admin.site.register(TypeLaunch, TypeLaunchAdmin)
 admin.site.register(Provider, ProviderAdmin)
 admin.site.register(Prevision, PrevisionAdmin)
 admin.site.register(WeekNumber, WeekNumberAdmin)
+admin.site.register(Contato, ContatoAdmin)

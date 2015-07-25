@@ -23,10 +23,10 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 from .forms import WeeknumberForm
 from rest_framework import generics, viewsets
-from finance.serializers import WeekNumberSerializer, UserSerializer, GroupSerializer
+from finance.serializers import *
 from finance.week_number import WeekNumber
 from django.contrib.auth.models import User, Group
-
+from finance.contato import Contato
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -42,6 +42,16 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
+class ContatoList(generics.ListCreateAPIView):
+	queryset = Contato.objects.all()
+	serializer_class = ContatoSerializer
+
+
+class ContatoDetail(generics.RetrieveUpdateDestroyAPIView):
+	queryset = Contato.objects.all()
+	serializer_class = ContatoSerializer
 
 
 class WeekNumberList(generics.ListCreateAPIView):

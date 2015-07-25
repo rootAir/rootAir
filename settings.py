@@ -58,14 +58,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'crispy_forms',
     'location_field',
     'activity',
     'finance',
     'travel',
     # 'djcelery',
+    # 'crispy_forms',
     'broker',
     'rest_framework',
+    # 'utils',
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -252,8 +253,8 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-DIR_LOCAL = '/Users/user/Documents/robo_screenshot/'
-CHROME_DRIVER = "/Users/user/Downloads/balance-pack/chromedriver"
+DIR_LOCAL = '/Users/user/Dropbox/projects/rootAir-pack/robo_screenshot/'
+CHROME_DRIVER = "/Users/user/Dropbox/projects/rootAir-pack/lib/chromedriver"
 URL_DROPBOX = 'https://www.dropbox.com/home/%s'
 
 # MyCap
