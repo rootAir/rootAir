@@ -59,21 +59,28 @@ class WeekNumber(models.Model):    #BaseRootAir
             self.synchronized = 'H'  #heroku
         super(self.__class__, self).save(*args, **kwargs)
 
+    def consolidate_week(self):
+        """
+        :return:
+        """
+        _num_week_close = WeekNumber.objects.filter(close_week=True).order_by('-date_init')[0].num_week
+        for _num_week in range(_num_week_close +1, this_week() +1):
+            _week = self.get_or_create(_num_week, True)
+        return _week
+
     def send_file_to_dropbox(self):
         """
         :return: buffering=-1, encoding="ISO-8859-1"
         _type_file = mycap or itau
         """
         try:
-            _week = self.get_or_create(None, True)
             _files_mycap = get_all_files(settings.DIR_LOCAL, '*.xls')
             if _files_mycap.__len__() > 0:
                 _path_file = _files_mycap[0][1]
                 _file = open(_path_file, 'rb')
                 self.import_extract_mycap(_file)
-                self.get_or_create(this_week() - 1)
-                self.get_or_create()
                 # if not self.import_exists(_path_file, 'mycap'):
+                    # _week = self.get_or_create(None, True)
                     # remove_file_dropbox(_week.docfile_mycap.name.split('/')[-1])
                     # _week.docfile_mycap = send_file_dropbox(FileWrapper(_file))
                     # _week.save()
@@ -83,14 +90,13 @@ class WeekNumber(models.Model):    #BaseRootAir
                 _path_file = _files_itau[0][1]
                 _file = open(_path_file, 'rb')
                 self.import_extract_itau(_file)
-                self.get_or_create(this_week() - 1)
-                self.get_or_create()
                 # if not self.import_exists(_path_file, 'itau'):
+                #     _week = self.get_or_create(None, True)
                 #     remove_file_dropbox(_week.docfile_itau.name.split('/')[-1])
                 #     _week.docfile_itau = send_file_dropbox(FileWrapper(_file))
-                _week.date_closed = str_to_datetime()
-                _week.save()
+                #     _week.save()
 
+            self.consolidate_week()
             remove_files_path()
         except:
             print('erro function get_file_to_dropbox')
@@ -209,6 +215,7 @@ class WeekNumber(models.Model):    #BaseRootAir
             _dt = Extract.objects.aggregate(Max('date_purchase'))
             if _dt['date_purchase__max'] > day_week['date_final']:
                 week.close_week = True
+                week.date_closed = str_to_datetime()
             else:
                 week.close_week = False
             week.save()

@@ -88,42 +88,5 @@
             "cost_fixo": "True",
             "value_fixed": "800.00"
         }
-    },
-    {
-        "model": "finance.TypeLaunch",
-        "pk": 11,
-        "fields": {
-            "type_name": "Hig_Beleza",
-            "cost_fixo": "False",
-            "value_fixed": "50.00"
-        }
-    },
-    {
-        "model": "finance.TypeLaunch",
-        "pk": 12,
-        "fields": {
-            "type_name": "Aviacao",
-            "cost_fixo": "False",
-            "value_fixed": "1000.00"
-        }
-    },
-    {
-        "model": "finance.TypeLaunch",
-        "pk": 13,
-        "fields": {
-            "type_name": "RootAir",
-            "cost_fixo": "False",
-            "value_fixed": "1000.00"
-        }
-    },
-    {
-        "model": "finance.TypeLaunch",
-        "pk": 14,
-        "fields": {
-            "type_name": "Activity",
-            "cost_fixo": "False",
-            "value_fixed": "1000.00"
-        }
     }
-
 ]
