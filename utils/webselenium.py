@@ -245,14 +245,18 @@ class RobotRemoteChrome():
 
     def __init__(self, work_package=None, debug=False, proxy=False, *args, **kwargs):
         options = webdriver.ChromeOptions()
+        options.add_argument('--kiosk')
         # options.add_argument('--start-maximized')
         options.add_argument('--allow-running-insecure-content')
         options.add_argument('--disable-web-security')
         options.add_argument('--disk-cache-dir=/var/www/cake2.2.4/app/tmp/cache/selenium-chrome-cache')
         options.add_argument('--no-referrers')
+        options.add_argument('--test-type')
         options.add_argument('--window-size=1003,719')
+        options.add_argument('--disable-extensions')
         # options.add_argument('--proxy-server=localhost:8118')
         options.add_argument("'chrome.prefs': {'profile.managed_default_content_settings.images': 2}")
+
 
         prefs = {"download.default_directory" : settings.DIR_LOCAL}
         options.add_experimental_option("prefs",prefs)
