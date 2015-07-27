@@ -262,3 +262,6 @@ class RobotRemoteChrome():
         options.add_experimental_option("prefs",prefs)
 
         self.driver = webdriver.Chrome(executable_path=settings.CHROME_DRIVER, chrome_options=options)
+        self.wait = WebDriverWait(self.driver, 10)
+        self.driver.implicitly_wait(10)
+        self.driver.set_page_load_timeout(10)
