@@ -1,3 +1,4 @@
+#<<<<<<< HEAD
 
 => Features
 Import of bank itau statement file
@@ -41,3 +42,6 @@ You can replace ``helloworld`` with your desired project name.
 - [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
 - [django-postgrespool](https://warehouse.python.org/project/django-postgrespool/)
 - [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+=======
+
+#>>>>>>> 6f7a1aa3d0f59fe841d8fff1d953505005d8f007
