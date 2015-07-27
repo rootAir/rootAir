@@ -15,11 +15,12 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 app = Celery('tasks', backend="amqp", broker='')
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
-from utils.report import *
+from utils.sync_report import *
 from utils.graphic import *
 from broker.sync_mycap import SyncMycap
 from finance.sync_itau import SyncItau
 from utils.sync_db import SyncDb
+from utils.sync_report import SyncReport
 
 
 class SyncMycap(SyncMycap):
@@ -55,4 +56,10 @@ def sync_db():
     if settings.DATABASE_LOCAL:
         sync_db = SyncDb()
         sync_db.run()
+
+# @shared_task
+@app.task  #(queue='sync_report')
+def sync_report():
+    _report = SyncReport()
+    _report.sync_report()
 

@@ -109,20 +109,6 @@ class ActivityAdmin(ActivityAdmin):
         if not obj is None:
             return obj.type_desc
 
-    def graphic_activity(self, request, json_ext=None, queryset=None):
-        """
-        :param request:
-        :param json_ext:
-        :param queryset:
-        :return:
-        """
-        try:
-            sync_graphic.delay()
-            self.message_user(request, "Requested synchronization with successfully executed.", level=messages.SUCCESS) #['ERROR', 'SUCCESS']
-        except:
-            self.message_user(request, "Operation not performed verify that RabbitMQ is running.", level=messages.ERROR)
-    graphic_activity.short_description = "Sync graphic activity week"
-
 
 admin.site.register(TypeActivity, TypeActivityAdmin)
 admin.site.register(Activity, ActivityAdmin)

@@ -10,7 +10,7 @@ from finance.models import * #WeekNumber #Document
 from finance.forms import DocumentForm
 import build.xlrd
 # from utils.util import *
-from utils.report import *
+from utils.sync_report import *
 from finance.extract import Extract
 from finance.admin import WeekNumberAdmin
 

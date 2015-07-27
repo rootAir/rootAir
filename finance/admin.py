@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from utils.report import *
+from utils.sync_report import *
 from django.contrib import messages, admin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
@@ -151,7 +151,7 @@ class WeekNumberAdmin(FinanceAdmin):
     date_hierarchy = 'date_closed'
     fieldsets = (
         ('Semana', {
-            'fields': ('num_week', 'date_init', 'date_final', 'close_week', 'date_closed')
+            'fields': ('num_week', 'date_init', 'date_final', 'close_week', 'date_closed', 'docfile_itau', 'docfile_mycap')
         }),
         ('Resultado', {
             'fields': ( 'value_week', 'value_debit_week',
@@ -192,20 +192,6 @@ class WeekNumberAdmin(FinanceAdmin):
             self.message_user(request, "Operation not performed verify that RabbitMQ is running.", level=messages.ERROR)
     sync_itau.short_description = "Synchronize itau"
 
-    # def sync_option_advfn(self, request, json_ext=None, queryset=None):
-    #     """
-    #     :param request:
-    #     :param json_ext:
-    #     :param queryset:
-    #     :return:
-    #     """
-    #     try:
-    #         sync_option_advfn.delay()
-    #         self.message_user(request, "Requested synchronization with options advfn successfully executed.", level=messages.SUCCESS) #['ERROR', 'SUCCESS']
-    #     except:
-    #         self.message_user(request, "Operation not performed verify that RabbitMQ is running.", level=messages.ERROR)
-    # sync_option_advfn.short_description = "Synchronize options advfn"
-
     def graphic_week(self, request, json_ext=None, queryset=None):
         """
         :param request:
@@ -215,7 +201,6 @@ class WeekNumberAdmin(FinanceAdmin):
         """
         try:
             sync_report.delay()
-            graphic_cost_activity_week()
             self.message_user(request, "Requested graphic week with successfully executed.", level=messages.SUCCESS) #['ERROR', 'SUCCESS']
         except:
             self.message_user(request, "Operation not performed verify that RabbitMQ is running.", level=messages.ERROR)

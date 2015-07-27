@@ -26,45 +26,7 @@ filter_fields = ['is_active', 'is_staff', 'is_superuser']
 default_order = 'data'
 
 
-# TaskThread
-class SyncReport(threading.Thread):
-    """Thread that executes a task every N seconds"""
-
-    def __init__(self):
-        """
-        :return:
-        """
-        threading.Thread.__init__(self)
-        self._finished = threading.Event()
-        self._interval = 30
-
-    def setInterval(self, interval):
-        """
-        :param interval: Set the number of seconds we sleep between executing our task
-        :return:
-        """
-        self._interval = interval
-
-    def shutdown(self):
-        """
-        :return: Stop this thread
-        """
-        self._finished.set()
-
-    def run(self):
-        """
-        :return: if self._finished.isSet(): return
-        sleep for interval or until shutdown
-        """
-        while True:
-            self._finished.wait(self._interval)
-            self.sync_report()
-
-    def __hash__(self):
-        """
-        :return: pass erros __hash__(self)
-        """
-        return 0
+class SyncReport():
 
     def sync_report(self):
         """
@@ -91,6 +53,7 @@ class SyncReport(threading.Thread):
         _week = wn.get_or_create(_num_week, True)
         gap_week = wn.get_gap_week(_week.date_init)
 
+        import ipdb; ipdb.set_trace()
         if _num_week == this_week():
             _pla.get_tasks_week()
             wn.import_extract_itau()
