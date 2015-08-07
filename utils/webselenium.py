@@ -8,6 +8,7 @@ from datetime import datetime
 from selenium import webdriver
 from django.conf import settings
 from selenium.webdriver.common.keys import Keys
+import selenium.webdriver.chrome.service as service
 import unicodedata
 
 
@@ -243,7 +244,7 @@ class RobotRemoteFirefox(BaseSelenium):
 
 class RobotRemoteChrome():
 
-    def __init__(self, work_package=None, debug=False, proxy=False, *args, **kwargs):
+    def __init__(self, debug=False, proxy=False, *args, **kwargs):
         options = webdriver.ChromeOptions()
         options.add_argument('--kiosk')
         # options.add_argument('--start-maximized')
@@ -260,6 +261,8 @@ class RobotRemoteChrome():
 
         prefs = {"download.default_directory" : settings.DIR_LOCAL}
         options.add_experimental_option("prefs",prefs)
+        # chromium_path = "/Users/user/Applications/Chromium"
+        # options.binary_location = chromium_path
 
         self.driver = webdriver.Chrome(executable_path=settings.CHROME_DRIVER, chrome_options=options)
         self.wait = WebDriverWait(self.driver, 10)

@@ -11,8 +11,9 @@ from django.db import transaction
 from django.conf import settings
 import os
 from finance.type_launch import TypeLaunch
+from rest_framework import serializers
 
-#
+
 # OPERADORAS = [
 # 	{'nome': "Oi", 'codigo': 14, 'categoria': "Celular", 'preco': 2},
 # 	{'nome': "Vivo", 'codigo': 15, 'categoria': "Celular", 'preco': 1},
@@ -26,14 +27,15 @@ class Contato(models.Model):
     nome = models.CharField(max_length=50, unique=True)
     telefone = models.CharField(max_length=10, unique=True)
     data = models.DateField('date contato')
-    # operadoras = models.CharField(max_length=10, choices=OPERADORAS)
+    # operadoras = models.TextField(choices=OPERADORAS)
 
     def __unicode__(self):
         return self.nome
 
-    def __str__(self):
-        return self.nome
+    # def __str__(self):
+    #     return self.nome
 
-    # class Meta:
+    class Meta:
     #     managed = False
     #     db_table = 'finance_contato'
+        ordering = ['nome']

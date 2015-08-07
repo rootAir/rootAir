@@ -46,11 +46,13 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 class ContatoList(generics.ListCreateAPIView):
 	queryset = Contato.objects.all()
+	model = Contato
 	serializer_class = ContatoSerializer
 
 
 class ContatoDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Contato.objects.all()
+	model = Contato
 	serializer_class = ContatoSerializer
 
 
