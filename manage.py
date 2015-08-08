@@ -7,12 +7,12 @@ import sys
 
 if __name__ == "__main__":
 
+    import django
+    django.setup()
+
     from django.core.management import execute_from_command_line
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
     # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "example.settings")
-
-    import django
-    django.setup()
 
     execute_from_command_line(sys.argv)
 
