@@ -75,7 +75,8 @@ INSTALLED_APPS = (
     # 'crispy_forms',
     'broker',
     'rest_framework',
-    'example.api',
+    # 'example.api',
+    'hello',
     # 'utils',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
@@ -91,20 +92,18 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': 'balance.db',
-        # 'DATABASE_URL': 'postgres://nzkykegnpqthbd:qUZh3xIUAGpR8MaKMNzNmGu4UI@ec2-54-204-47-58.compute-1.amazonaws.com:5432/d2mip32hc4j96o',
-        # 'HEROKU_POSTGRESQL_VIOLET_URL': 'postgres://nzkykegnpqthbd:qUZh3xIUAGpR8MaKMNzNmGu4UI@ec2-54-204-47-58.compute-1.amazonaws.com:5432/d2mip32hc4j96o',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-# Parse database configuration from $DATABASE_URL
-# Enable Connection Pooling (if desired)
-DATABASE_URL = 'postgres://pwvoeyiyubbkeo:PbfoF02PJc9qQY-4VTDBtj2IQv@ec2-54-204-0-120.compute-1.amazonaws.com:5432/dbpri746ds51ev'
+
+# Parse database configuration from $DATABASE_URL Enable Connection Pooling (if desired)
+# DATABASE_URL = 'postgres://pwvoeyiyubbkeo:PbfoF02PJc9qQY-4VTDBtj2IQv@ec2-54-204-0-120.compute-1.amazonaws.com:5432/dbpri746ds51ev'
 DATABASES['default'] =  dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django_postgrespool'
-DATABASES['default']['DATABASE_URL'] = DATABASE_URL
-DATABASES['default']['HEROKU_POSTGRESQL_VIOLET'] = DATABASE_URL
-# DATABASES['default']['NAME'] = 'DataBaseName'
+# DATABASES['default']['DATABASE_URL'] = DATABASE_URL
+# DATABASES['default']['HEROKU_POSTGRESQL_VIOLET'] = DATABASE_URL
+
 
 ###########################################################
 # Celery RabitQM Broker configuration for Celery
@@ -161,6 +160,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
 )
 
 LOGGING = {
@@ -189,10 +189,10 @@ LOGGING = {
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
-AUTH_USER_MODEL = 'api.User'
-
-# !!!!!This is for demonstration only!!!!!
-AUTHENTICATION_BACKENDS = ['example.api.auth.AlwaysRootBackend']
+# AUTH_USER_MODEL = 'api.User'
+#
+# # !!!!!This is for demonstration only!!!!!
+# AUTHENTICATION_BACKENDS = ['example.api.auth.AlwaysRootBackend']
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -219,8 +219,24 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 ###########################################################
 
-# ROOT_URLCONF = 'urls'
-ROOT_URLCONF = 'example.urls'
+ROOT_URLCONF = 'urls'
+# ROOT_URLCONF = 'example.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 WSGI_APPLICATION = 'wsgi.application'
 
