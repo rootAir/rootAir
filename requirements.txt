@@ -1,4 +1,4 @@
--e git+http://github.com/rootAir/rootAir.git@fc2f0c51a9596ecada2e31c5b3f63341ad6bc0f1#egg=API_Example-master
+#-e git+http://github.com/rootAir/rootAir.git@fc2f0c51a9596ecada2e31c5b3f63341ad6bc0f1#egg=API_Example-master
 Django==1.7
 wsgiref==0.1.2
 dj-static==0.0.6
