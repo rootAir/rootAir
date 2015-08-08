@@ -1,10 +1,5 @@
+-e git+http://github.com/rootAir/rootAir.git@fc2f0c51a9596ecada2e31c5b3f63341ad6bc0f1#egg=API_Example-master
 Django==1.8.3
-djangorestframework<3
-pillow
-
-# Optional
-#werkzeug
-django-extensions
 Fabric==1.10.1
 Flask==0.10.1
 Flask-Bootstrap==3.1.1.1
@@ -20,6 +15,7 @@ Jinja2==2.7.3
 Mako==1.0.0
 Markdown==2.4
 MarkupSafe==0.23
+Pillow==2.9.0
 SQLAlchemy==0.9.8
 Unidecode==0.04.17
 WTForms==1.0.5
@@ -41,9 +37,11 @@ coverage==3.7.1
 dateutils==0.6.6
 dj-database-url==0.3.0
 django-appconf==1.0.1
+django-extensions==1.5.5
 django-inspectional-registration==0.4.6
 django-postgrespool==0.3.0
 django-storages==1.1.8
+djangorestframework==2.4.6
 dropbox==2.2.0
 ecdsa==0.11
 gnureadline==6.3.3
