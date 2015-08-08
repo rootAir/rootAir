@@ -11,8 +11,8 @@ if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
     # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "example.settings")
 
-    # import django
-    # django.setup()
+    import django
+    django.setup()
 
     execute_from_command_line(sys.argv)
 
