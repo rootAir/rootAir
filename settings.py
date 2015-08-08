@@ -99,7 +99,7 @@ DATABASES = {
 }
 # Parse database configuration from $DATABASE_URL
 # Enable Connection Pooling (if desired)
-DATABASE_URL = 'postgres://nzkykegnpqthbd:qUZh3xIUAGpR8MaKMNzNmGu4UI@ec2-54-204-47-58.compute-1.amazonaws.com:5432/d2mip32hc4j96o'
+DATABASE_URL = 'postgres://pwvoeyiyubbkeo:PbfoF02PJc9qQY-4VTDBtj2IQv@ec2-54-204-0-120.compute-1.amazonaws.com:5432/dbpri746ds51ev'
 DATABASES['default'] =  dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django_postgrespool'
 DATABASES['default']['DATABASE_URL'] = DATABASE_URL
