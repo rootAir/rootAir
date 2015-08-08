@@ -2,7 +2,9 @@
 # Created by .ignore support plugin (hsz.mobi
 
 # Compiled Python files
+venv
 *.pyc
+staticfiles
 
 # Folder view configuration files
 .DS_Store
