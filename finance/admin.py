@@ -160,8 +160,8 @@ class WeekNumberAdmin(FinanceAdmin):
         }),
     )
 
-    def queryset(self, request):
-        qs = super(WeekNumberAdmin, self).queryset(request)
+    def get_queryset(self, request):
+        qs = super(WeekNumberAdmin, self).get_queryset(request)
         return qs.order_by('-date_init')
 
     def sync_mycap(self, request, json_ext=None, queryset=None):

@@ -1,8 +1,8 @@
 #-e git+http://github.com/rootAir/rootAir.git@fc2f0c51a9596ecada2e31c5b3f63341ad6bc0f1#egg=API_Example-master
 Django==1.7
-wsgiref==0.1.2
+#wsgiref==0.1.2
+#static==0.4
 dj-static==0.0.6
-static==0.4
 Fabric==1.10.1
 Flask==0.10.1
 Flask-Bootstrap==3.1.1.1
