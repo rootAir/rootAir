@@ -1,4 +1,10 @@
 Django==1.8.3
+djangorestframework<3
+pillow
+
+# Optional
+#werkzeug
+django-extensions
 Fabric==1.10.1
 Flask==0.10.1
 Flask-Bootstrap==3.1.1.1
