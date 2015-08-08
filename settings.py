@@ -24,17 +24,24 @@ ADMINS = (
 )
 
 DOMAIN = 'YOUR_DOMAIN'
+MANAGERS = ADMINS
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 REPOSITORY_ROOT = os.path.dirname(BASE_DIR)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
+# STATIC_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static'))
+# STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
+STATIC_ROOT = 'staticfiles'
 
-STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
+STATIC_URL = '/static/'
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media'))
+MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'tmp/')
 
 MEDIA_URL = '/tmp/'
-MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'tmp/')
 
 
 # REST_FRAMEWORK = {
@@ -58,7 +65,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'location_field',
+    'django_extensions',
     'activity',
     'finance',
     'travel',
@@ -66,7 +75,11 @@ INSTALLED_APPS = (
     # 'crispy_forms',
     'broker',
     'rest_framework',
+    'example.api',
     # 'utils',
+    # Uncomment the next line to enable admin documentation:
+    # 'django.contrib.admindocs',
+
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -174,6 +187,13 @@ LOGGING = {
     }
 }
 
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+AUTH_USER_MODEL = 'api.User'
+
+# !!!!!This is for demonstration only!!!!!
+AUTHENTICATION_BACKENDS = ['example.api.auth.AlwaysRootBackend']
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -199,7 +219,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 ###########################################################
 
-ROOT_URLCONF = 'urls'
+# ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'example.urls'
 
 WSGI_APPLICATION = 'wsgi.application'
 
@@ -242,13 +263,16 @@ TEMPLATE_DIRS = (
 )
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
-
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'assets')),
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
 )
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
