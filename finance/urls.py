@@ -5,7 +5,7 @@ from django.views.generic.base import RedirectView
 # from .views import HomeView, WeeknumberFormView
 from .admin import WeekNumberAdmin
 from rest_framework.urlpatterns import format_suffix_patterns
-from finance import views
+from . import views
 
 
 urlpatterns = patterns('finance.views',

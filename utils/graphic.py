@@ -10,8 +10,8 @@ from activity.type_activity import TypeActivity
 from activity.planned import Planned
 from django.conf import settings
 # from utils.trello import *
-from utils.worksheet import *
-from utils.dropbox import *
+from .worksheet import *
+from .dropbox import *
 from threading import Thread
 from time import sleep
 from datetime import timedelta, datetime

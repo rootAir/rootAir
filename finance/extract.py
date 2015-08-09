@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.db import transaction
 from django.conf import settings
 import os
-from finance.provider import Provider
+from .provider import Provider
 
 
 class Balance(models.Model):

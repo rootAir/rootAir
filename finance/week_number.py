@@ -9,7 +9,7 @@ from django.db.models import Sum, Max
 from django.contrib import messages
 from django.db import transaction
 from django.conf import settings
-from finance.extract import Extract
+from .extract import Extract
 from broker.investment import Investment
 from utils.dropbox import *
 from django.core.files import File as FileWrapper

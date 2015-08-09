@@ -11,8 +11,8 @@ from finance.forms import DocumentForm
 import build.xlrd
 # from utils.util import *
 from utils.sync_report import *
-from finance.extract import Extract
-from finance.admin import WeekNumberAdmin
+from .extract import Extract
+from .admin import WeekNumberAdmin
 
 import json
 from django.http import HttpResponse
@@ -23,10 +23,10 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 from .forms import WeeknumberForm
 from rest_framework import generics, viewsets
-from finance.serializers import *
-from finance.week_number import WeekNumber
+from .serializers import *
+from .week_number import WeekNumber
 from django.contrib.auth.models import User, Group
-from finance.contato import Contato
+from .contato import Contato
 
 class UserViewSet(viewsets.ModelViewSet):
     """

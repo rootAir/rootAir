@@ -17,7 +17,7 @@ from broker.wallet_buy import *
 from utils.webselenium import *
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.select import Select
-from finance.week_number import WeekNumber
+from .week_number import WeekNumber
 import time, sys, threading, inspect, os
 
 

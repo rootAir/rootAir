@@ -2,7 +2,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.contenttypes.models import *
-from utils.util import *
+from .util import *
 from django.db.models import Sum, Max
 from django.contrib import messages
 from django.db import transaction

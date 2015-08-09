@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from finance.week_number import WeekNumber
-from finance.contato import Contato
+from .week_number import WeekNumber
+from .contato import Contato
 
 # get("http://localhost:8027/contatos/api/?format=json", function(data){
 #     console.log(data);

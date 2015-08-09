@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.db import transaction
 from django.conf import settings
 import os
-from finance.type_launch import TypeLaunch
+from .type_launch import TypeLaunch
 from rest_framework import serializers
 
 

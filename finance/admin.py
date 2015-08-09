@@ -9,22 +9,22 @@ from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.views.generic.base import RedirectView
 from django import http
-from finance.extract import Extract
-from finance.provider import Provider
-from finance.type_launch import TypeLaunch
-from finance.week_number import WeekNumber
+from .extract import Extract
+from .provider import Provider
+from .type_launch import TypeLaunch
+from .week_number import WeekNumber
 from activity.type_activity import TypeActivity
 from django.utils.html import format_html_join
 from django.utils.safestring import mark_safe
 from utils.util import *
-from finance.prevision import *
+from .prevision import *
 import random, os
 from tasks import *
 import datetime
 import time
 # from django.http import HttpResponsePermanentRedirect
 from utils.graphic import *
-from finance.contato import *
+from .contato import *
 
 
 class FinanceAdmin(admin.ModelAdmin):
