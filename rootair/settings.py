@@ -17,8 +17,8 @@ SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 ###########################################################
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DEBUG', False)
-TEMPLATE_DEBUG = False
+DEBUG = os.environ.get('DEBUG', True)
+TEMPLATE_DEBUG = True
 
 ADMINS = (
     ('USER_NAME', 'USER_EMAIL'),
@@ -29,13 +29,13 @@ MANAGERS = ADMINS
 
 REPOSITORY_ROOT = os.path.dirname(BASE_DIR)
 
+STATIC_URL = '/static/'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 # STATIC_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static'))
 # STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
 STATIC_ROOT = 'staticfiles'
-
-STATIC_URL = '/static/'
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media'))
@@ -43,11 +43,11 @@ MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'tmp/')
 
 MEDIA_URL = '/tmp/'
 
+# 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',),
+# 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+# 'PAGE_SIZE': 10
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication',),
-    # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',),
-    'PAGE_SIZE': 10
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication',)
 }
 
 ###########################################################
@@ -82,7 +82,6 @@ INSTALLED_APPS = (
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
 
 ###########################################################
 # Database
@@ -147,7 +146,7 @@ CELERY_QUEUE_ADD = "add"
 ###########################################################
 
 # Application definition
-
+# 'django.middleware.security.SecurityMiddleware',
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -156,7 +155,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'django.middleware.security.SecurityMiddleware',
 )
 
 LOGGING = {
@@ -191,10 +189,10 @@ AUTH_USER_MODEL = 'authentication.Account'
 # # !!!!!This is for demonstration only!!!!!
 # AUTHENTICATION_BACKENDS = ['example.api.auth.AlwaysRootBackend']
 
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
 )
 
@@ -274,9 +272,9 @@ ALLOWED_HOSTS = ['*']
 # TEMPLATE_DIRS = (
 #     os.path.join(os.path.dirname(os.path.dirname(__file__)), 'templates')
 # )
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), "static", "templates"),
-)
+# TEMPLATE_DIRS = (
+#     os.path.join(os.path.dirname(__file__), "static", "templates"),
+# )
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
