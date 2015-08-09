@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.db import transaction
 from django.conf import settings
 from .extract import Extract
-from broker.investment import Investment
+# from broker.investment import Investment
 from utils.dropbox import *
 from django.core.files import File as FileWrapper
 import xlrd, os
