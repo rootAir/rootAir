@@ -6,13 +6,10 @@ import dj_database_url
 # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
-
 
 ###########################################################
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -288,9 +285,9 @@ TEMPLATE_DIRS = (
 #     Don't forget to use absolute paths, not relative paths.
 # )
 
+# os.path.join(BASE_DIR, 'dist/static'),
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'dist/static'),
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '.static'),
 )
 
 # Simplified static file serving.
@@ -340,7 +337,6 @@ DROPBOX_ACCESS_TOKEN = 'YOUR_DROPBOX_ACCESS_TOKEN'
 DROPBOX_ACCESS_TOKEN_SECRET = 'YOUR_DROPBOX_ACCESS_TOKEN_SECRET'
 
 TYPELAUNCH_DEFAULT = '(Nenhum)'
-
 
 try:
     local = open(os.path.join(BASE_DIR,'settings_local.py')).read()

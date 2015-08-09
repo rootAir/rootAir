@@ -90,11 +90,11 @@ For more information about using Python on Heroku, see these Dev Center articles
 
 *NOTE: Requires [Heroku Toolbelt](https://toolbelt.heroku.com/).*
 
-heroku apps:create
+heroku apps:create;
 heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git;
 heroku config:set DEBUG=False;
 heroku config:set COMPRESS_ENABLED=True;
-
+git push heroku master;
 
 * `$ git push heroku master`
 * `$ heroku open`
