@@ -11,9 +11,9 @@ from django.contrib import messages
 from django.conf import settings
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from broker.trade_sell import Trade
-from broker.trade_active import TradeActive
-from broker.wallet_buy import *
+# from broker.trade_sell import Trade
+# from broker.trade_active import TradeActive
+# from broker.wallet_buy import *
 from utils.webselenium import *
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.select import Select
