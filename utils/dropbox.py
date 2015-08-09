@@ -1,5 +1,5 @@
 from django.core.management.base import NoArgsCommand
-from dropbox import rest, session
+# from dropbox import rest, session
 # from django_dropbox.settings import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TYPE
 from django.conf import settings
 from datetime import datetime
