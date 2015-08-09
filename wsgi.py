@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 # If you’re using mod_wsgi to deploy your Django application you need to include the following in your .wsgi module:
 
 import os
-os.environ["CELERY_LOADER"] = "django"
+# os.environ["CELERY_LOADER"] = "django"
 
-import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 from django.core.wsgi import get_wsgi_application
