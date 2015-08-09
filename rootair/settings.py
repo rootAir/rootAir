@@ -61,7 +61,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'location_field',
+    # 'location_field',
     'django_extensions',
     'activity',
     'finance',
