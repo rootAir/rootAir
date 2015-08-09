@@ -285,9 +285,10 @@ TEMPLATE_DIRS = (
 #     Don't forget to use absolute paths, not relative paths.
 # )
 
-# os.path.join(BASE_DIR, 'dist/static'),
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '.static'),
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'rootair/static'),
+    os.path.join(BASE_DIR, 'dist/static'),
 )
 
 # Simplified static file serving.
