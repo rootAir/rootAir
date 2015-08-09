@@ -36,6 +36,7 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static'))
 # STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
 STATIC_ROOT = 'staticfiles'
+COMPRESS_ROOT = 'staticfiles'
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media'))
