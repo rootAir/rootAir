@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 from datetime import datetime
 from django.conf import settings
-from oauth2client.client import SignedJwtAssertionCredentials
+# from oauth2client.client import SignedJwtAssertionCredentials
 import httplib2
 import pprint
 import json

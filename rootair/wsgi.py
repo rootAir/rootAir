@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 
 #
 # Special note for mod_wsgi users
-# If you’re using mod_wsgi to deploy your Django application you need to include the following in your .wsgi module:
+# If youe using mod_wsgi to deploy your Django application you need to include the following in your .wsgi module:
 
 import os
 # os.environ["CELERY_LOADER"] = "django"
