@@ -3,6 +3,7 @@ import sys
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -16,7 +17,7 @@ SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 ###########################################################
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
 TEMPLATE_DEBUG = False
 
 ADMINS = (
@@ -26,7 +27,6 @@ ADMINS = (
 DOMAIN = 'YOUR_DOMAIN'
 MANAGERS = ADMINS
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 REPOSITORY_ROOT = os.path.dirname(BASE_DIR)
 
 # Static files (CSS, JavaScript, Images)
@@ -43,15 +43,10 @@ MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'tmp/')
 
 MEDIA_URL = '/tmp/'
 
-
-# REST_FRAMEWORK = {
-#                     'DEFAULT_PERMISSION_CLASSES': [
-#                         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-#                     ]
-# }
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication',),
+    # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',),
     'PAGE_SIZE': 10
 }
 
@@ -75,12 +70,15 @@ INSTALLED_APPS = (
     # 'crispy_forms',
     'broker',
     'rest_framework',
+    'compressor',
     # 'example.api',
     'hello',
     # 'utils',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-
+    'debug_toolbar',
+    'authentication',
+    'posts',
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -91,19 +89,17 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///' + os.path.join(BASE_DIR, 'rootAir.sqlite3')
+    )
 }
 
 # Parse database configuration from $DATABASE_URL Enable Connection Pooling (if desired)
 # DATABASE_URL = 'postgres://pwvoeyiyubbkeo:PbfoF02PJc9qQY-4VTDBtj2IQv@ec2-54-204-0-120.compute-1.amazonaws.com:5432/dbpri746ds51ev'
-DATABASES['default'] =  dj_database_url.config()
-DATABASES['default']['ENGINE'] = 'django_postgrespool'
+# DATABASES['default'] =  dj_database_url.config()
+# DATABASES['default']['ENGINE'] = 'django_postgrespool'
 # DATABASES['default']['DATABASE_URL'] = DATABASE_URL
 # DATABASES['default']['HEROKU_POSTGRESQL_VIOLET'] = DATABASE_URL
-
 
 ###########################################################
 # Celery RabitQM Broker configuration for Celery
@@ -160,7 +156,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
 )
 
 LOGGING = {
@@ -190,6 +186,7 @@ LOGGING = {
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # AUTH_USER_MODEL = 'api.User'
+AUTH_USER_MODEL = 'authentication.Account'
 #
 # # !!!!!This is for demonstration only!!!!!
 # AUTHENTICATION_BACKENDS = ['example.api.auth.AlwaysRootBackend']
@@ -198,7 +195,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
+
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', True)
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -219,9 +219,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 ###########################################################
 
-ROOT_URLCONF = 'rootair.urls'
-# ROOT_URLCONF = 'example.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -237,6 +234,9 @@ TEMPLATES = [
         },
     },
 ]
+
+ROOT_URLCONF = 'rootair.urls'
+# ROOT_URLCONF = 'example.urls'
 
 WSGI_APPLICATION = 'rootair.wsgi.application'
 
@@ -277,22 +277,27 @@ ALLOWED_HOSTS = ['*']
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), "static", "templates"),
 )
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-STATICFILES_DIRS = (
-    os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'assets')),
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
 )
 
 # STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
+#     os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'assets')),
+#     Put strings here, like "/home/html/static" or "C:/www/django/static".
+#     Always use forward slashes, even on Windows.
+#     Don't forget to use absolute paths, not relative paths.
 # )
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'dist/static'),
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 DIR_LOCAL = '/Users/user/Dropbox/projects/rootAir-pack/robo_screenshot/'
 CHROME_DRIVER = "/Users/user/Dropbox/projects/rootAir-pack/lib/chromedriver"
 URL_DROPBOX = 'https://www.dropbox.com/home/%s'

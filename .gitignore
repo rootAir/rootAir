@@ -4,7 +4,22 @@
 # Compiled Python files
 venv
 *.pyc
-staticfiles
+
+# SQLite3 database
+*.sqlite3
+
+# Node modules
+node_modules/
+npm-debug.log
+
+# Bower components
+static/bower_components/
+
+# Uglified JavaScript
+dist/
+
+# Staticfiles
+staticfiles/
 
 # Folder view configuration files
 .DS_Store

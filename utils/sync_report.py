@@ -8,7 +8,7 @@ from broker.investment import Investment
 from activity.activity import Activity
 from activity.planned import Planned
 from django.conf import settings
-from utils.trello import *
+# from utils.trello import *
 from utils.worksheet import *
 from utils.dropbox import *
 from threading import Thread

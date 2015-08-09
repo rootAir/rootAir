@@ -5,7 +5,7 @@ from django.contrib.contenttypes.models import *
 import os
 from django.conf import settings
 from utils.util import *
-from utils.trello import *
+# from utils.trello import *
 from django.db import transaction
 from activity.type_activity import TypeActivity
 from finance.type_launch import TypeLaunch

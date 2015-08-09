@@ -9,7 +9,7 @@ from django.db import transaction
 from activity.type_activity import TypeActivity
 from finance.type_launch import TypeLaunch
 from django.db.models import Sum, Max
-from utils.trello import *
+# from utils.trello import *
 from datetime import datetime
 from finance.week_number import *
 
