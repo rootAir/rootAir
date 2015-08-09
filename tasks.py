@@ -23,9 +23,9 @@ from utils.sync_db import SyncDb
 from utils.sync_report import SyncReport
 
 
-class SyncMycap(SyncMycap):
-    def __init__(self, *args, **kwargs):
-        super(self.__class__, self).__init__(*args, **kwargs)
+# class SyncMycap(SyncMycap):
+#     def __init__(self, *args, **kwargs):
+#         super(self.__class__, self).__init__(*args, **kwargs)
 
 
 class SyncItau(SyncItau):
@@ -38,12 +38,12 @@ class SyncDb(SyncDb):
         super(self.__class__, self).__init__(*args, **kwargs)
 
 
-# @shared_task
-@app.task  #(queue='sync_mycap')
-def sync_mycap():
-    if settings.DATABASE_LOCAL:
-        sync_mycap = SyncMycap()
-        sync_mycap.run()
+# # @shared_task
+# @app.task  #(queue='sync_mycap')
+# def sync_mycap():
+#     if settings.DATABASE_LOCAL:
+#         sync_mycap = SyncMycap()
+#         sync_mycap.run()
 
 @app.task  #(queue='sync_itau')
 def sync_itau():
