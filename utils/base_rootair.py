@@ -9,7 +9,7 @@ from django.db import transaction
 from django.conf import settings
 import os
 from finance.extract import Extract
-from broker.investment import Investment
+# from broker.investment import Investment
 
 
 class BaseRootAir(models.Model):

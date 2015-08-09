@@ -4,7 +4,7 @@ from utils.util import *
 from finance.week_number import WeekNumber
 from finance.extract import Extract
 from finance.type_launch import TypeLaunch
-from broker.investment import Investment
+# from broker.investment import Investment
 from activity.activity import Activity
 from activity.planned import Planned
 from django.conf import settings
