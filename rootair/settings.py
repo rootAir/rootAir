@@ -38,11 +38,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 COMPRESS_ROOT = 'staticfiles'
 
-# MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media'))
 MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'tmp/')
 
-MEDIA_URL = '/tmp/'
+# MEDIA_URL = '/tmp/'
+MEDIA_URL = '/media/'
 
 # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',),
 # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
