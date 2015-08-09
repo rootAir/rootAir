@@ -6,7 +6,7 @@ import os
 from django.conf import settings
 from utils.util import *
 from django.db import transaction
-from activity.type_activity import TypeActivity
+from .type_activity import TypeActivity
 from finance.type_launch import TypeLaunch
 from django.db.models import Sum, Max
 # from utils.trello import *
