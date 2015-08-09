@@ -17,7 +17,7 @@ app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 from utils.sync_report import *
 from utils.graphic import *
-from broker.sync_mycap import SyncMycap
+# from broker.sync_mycap import SyncMycap
 from finance.sync_itau import SyncItau
 from utils.sync_db import SyncDb
 from utils.sync_report import SyncReport
