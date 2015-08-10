@@ -95,6 +95,7 @@ heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-mult
 heroku config:set DEBUG=False;
 heroku config:set COMPRESS_ENABLED=True;
 git push heroku master;
+ls;
 
 * `$ git push heroku master`
 * `$ heroku open`
