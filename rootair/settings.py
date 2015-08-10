@@ -14,7 +14,7 @@ SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 ###########################################################
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DEBUG', True)
+DEBUG = os.environ.get('DEBUG', False)
 TEMPLATE_DEBUG = True
 
 ADMINS = (
@@ -287,7 +287,6 @@ TEMPLATE_DIRS = (
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'rootair/static'),
     os.path.join(BASE_DIR, 'dist/static'),
 )
 
