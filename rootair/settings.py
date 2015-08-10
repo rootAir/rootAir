@@ -14,7 +14,8 @@ SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 ###########################################################
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DEBUG', False)
+# DEBUG = os.environ.get('DEBUG', True)
+DEBUG = False
 TEMPLATE_DEBUG = True
 
 ADMINS = (
@@ -32,7 +33,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 # STATIC_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static'))
 # STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
-STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = '/static/'
+
 COMPRESS_ROOT = 'staticfiles'
 
 # MEDIA_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media'))
@@ -286,7 +289,6 @@ TEMPLATE_DIRS = (
 # )
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'dist/static'),
     os.path.join(BASE_DIR, 'static'),
 )
 
