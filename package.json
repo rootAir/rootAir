@@ -1,5 +1,5 @@
 {
-  "name": "rootAir",
+  "name": "rootair",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,10 +22,5 @@
     "gulp": "^3.8.9",
     "gulp-ng-annotate": "^0.3.3",
     "gulp-uglify": "^1.0.1"
-  },
-  "devDependencies": {
-    "coffee-script": "",
-    "grunt": "",
-    "grunt-contrib-coffee": ""
   }
 }
