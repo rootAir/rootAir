@@ -33,8 +33,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 # STATIC_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static'))
 # STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
-# STATIC_ROOT = 'staticfiles'
-STATIC_ROOT = '/static/'
+STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = '/static/'
 
 COMPRESS_ROOT = 'staticfiles'
 
