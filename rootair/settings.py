@@ -286,8 +286,7 @@ TEMPLATE_DIRS = (
 # )
 
 STATICFILES_DIRS = (
-    # os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'dist/static'),
+    os.path.join(BASE_DIR, 'app/static'),
 )
 
 # Simplified static file serving.
