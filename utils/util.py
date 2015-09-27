@@ -2,6 +2,8 @@ from datetime import datetime
 from django.conf import settings
 import glob, os, fnmatch
 import time
+import calendar
+from datetime import date, timedelta
 
 STATUS_CHOICES = (
     ('L', 'Local'),
@@ -14,6 +16,41 @@ Month = {1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun', 7: 'Jul', 8
 Extract_Mycap = ['ABERTURA', 'HORA', 'ATIVO', 'OPERACAO', 'TIPO', 'QTDE. ENVIO', 'QTDE. EXEC.', 'PCO. ENVIO', 'PCO. EXEC.','TOTAL R$','VALIDADE','STATUS']
 listOptions = ['petr4', 'vale5', 'bvmf3', 'itub3']
 
+
+def daysOfMonth(self, month=None,  year=None):
+    """
+    :param year:
+    :param month:
+    :return:  days the month in parameters
+    """
+    month = month or datetime.today().month
+    year = year or datetime.today().year
+    first_day_month = date(year, month, 1)
+    year, weekBase, dayBase = first_day_month.isocalendar()
+    sunday = 0
+    qtd_day_before = 0
+    if dayBase != sunday:
+        first_day_month = self.dif_date(-dayBase-1, first_day_month)
+    day = 0
+    list_of_days = []
+    for i in range(42):
+        day += 1
+        _date = self.dif_date(day, first_day_month)
+        list_of_days.append({
+                            "day": _date
+        })
+
+    return list_of_days
+
+def dif_date(self, day, date=None):
+    """
+    :param day:
+    :param date:
+    :return: diferents day in date
+    """
+    _date = date or self._day
+    day = _date.toordinal() + day
+    return date.fromordinal(day)
 
 
 def get_synchronized(synchronized):
