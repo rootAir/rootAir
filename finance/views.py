@@ -8,7 +8,7 @@ from datetime import datetime
 
 from finance.models import * #WeekNumber #Document
 from finance.forms import DocumentForm
-import build.xlrd
+# import build.xlrd
 # from utils.util import *
 from utils.sync_report import *
 from .extract import Extract
@@ -28,12 +28,12 @@ from .week_number import WeekNumber
 from django.contrib.auth.models import User, Group
 from .contato import Contato
 
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+# class UserViewSet(viewsets.ModelViewSet):
+#     """
+#     API endpoint that allows users to be viewed or edited.
+#     """
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
 
 
 class GroupViewSet(viewsets.ModelViewSet):
