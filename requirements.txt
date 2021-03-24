@@ -85,7 +85,7 @@ pytz==2015.4
 redis==2.10.3
 requests==2.6.0
 requests-oauthlib==0.4.2
-rsa==3.1.4
+rsa==4.1
 selenium==2.45.0
 simplejson==3.6.5
 six==1.8.0
