@@ -2,7 +2,7 @@
 #Django==1.8.1  #Error importing debug panel debug_toolbar.panels.templates: "cannot import name get_standard_processors"
 Django==1.7.1
 django-compressor==1.4
-django-debug-toolbar==1.2.2
+django-debug-toolbar==1.11.1
 django-toolbelt==0.0.1
 sqlparse==0.1.13
 drf-nested-routers==0.9.0
