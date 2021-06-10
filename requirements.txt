@@ -1,6 +1,6 @@
 #-e git+http://github.com/rootAir/rootAir.git@fc2f0c51a9596ecada2e31c5b3f63341ad6bc0f1#egg=API_Example-master
 #Django==1.8.1  #Error importing debug panel debug_toolbar.panels.templates: "cannot import name get_standard_processors"
-Django==1.7.1
+Django==2.2.24
 django-compressor==1.4
 django-debug-toolbar==1.2.2
 django-toolbelt==0.0.1
